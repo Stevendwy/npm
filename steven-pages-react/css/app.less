@@ -1,0 +1,177 @@
+@zero: 0;
+@auto: "auto";
+
+//百分比
+@cFive: 5%;
+@cTen: 10%;
+@cQuarter: 25%;
+@cOneThird: 33.3%;
+@cHalf: 50%;
+@cFull: 100%;
+
+//像素
+@pOne: 1px;
+@pTwo: 2px;
+@pThree: 3px;
+@pFive: 5px;
+@pSeven: 7px;
+@pTen: 10px;
+
+//颜色
+@lucency: rgba(0, 0, 0, 0);
+.color(@color: #FFF) {
+    color: @color;
+}
+
+//字色
+@fcMain: #333;
+@fcSub: #666;
+@fcRemind: #999;
+.fontSize(@fontSize: 14px) {
+    font-size: @fontSize;
+}
+
+//边框颜色
+@bColor: #D8D8D8;
+@bColorActive: #45C0FF;
+@bColorLine: #DFDFDF; //单根颜色
+
+//按钮颜色
+@buttonColor: #1aa0f3;
+
+//层级
+@zOne: 1;
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.block {
+    display: block;
+}
+
+.inlineBlock {
+    display: inline-block;
+}
+
+.alpha0 {
+    background-color: rgba(0, 0, 0, 0)
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.position(@topPosition: 0, @rightPosition: 0, @bottomPosition: 0, @leftPosition: 0) {
+    top: @topPosition;
+    right: @rightPosition;
+    bottom: @bottomPosition;
+    left: @leftPosition;
+}
+
+.rect(@topRect: 0, @widthRect: "auto", @heightRect: "auto") {
+    top: @topRect;
+    width: @widthRect;
+    height: @heightRect;
+}
+
+.rectLeft(@leftRect: 0, @topRect: 0, @widthRect: "auto", @heightRect: "auto") {
+    left: @leftRect;
+    .rect(@topRect, @widthRect, @heightRect)
+}
+
+.rectRight(@rightRect: 0, @topRect: 0, @widthRect: "auto", @heightRect: "auto") {
+    right: @rightRect;
+    .rect(@topRect, @widthRect, @heightRect)
+}
+
+.size(@widthSize: "auto", @heightSize: "auto") {
+    width: @widthSize;
+    height: @heightSize;
+}
+
+.sizeFull {
+    width: @cFull;
+    height: @cFull;
+}
+
+.sizeFullWidth {
+    width: @cFull;
+}
+
+.sizeFullHeight {
+    height: @cFull;
+}
+
+//分页样式FF3232
+.paginationDiv {
+    .block;
+    margin-top: @pTen;
+    color: #535353;
+    line-height: 32px;
+    text-align: center;
+        a {
+        float: left;
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        vertical-align: middle;
+        text-decoration: none;
+        cursor: pointer;
+        margin-right: @pTwo*2;
+        background: #FFFFFF;
+        border: 1px solid #D8D8D8;
+        border-radius: 4px;
+    }
+    .next,
+    .prev {
+        border: 1px solid #e5e5e5;
+        color: red999;
+    }
+    .firstandlast{
+           //首页尾页
+           width: @pTen*6;
+    }
+    .next:hover,
+    .prev:hover {
+        background-color: #ddd;
+        border: 1px solid #ddd;
+    }
+    .next:before,
+    .prev:before {
+        font-size: 14px;
+    }
+    .disable.next,
+    .prev.disable {
+        border-color: #e5e5e5;
+        cursor: default;
+    }
+    .disable.next:before,
+    .prev.disable:before {
+        color: #a0a0a0;
+        border-color: #337ab7;
+    }
+    .num {
+        font-size: @pTwo*6;
+        color: @fcRemind;
+    }
+    .num.current {
+        border: 1px solid #333333;
+        color: @fcMain;
+    }
+    .num:hover {
+        background-color: #ddd;
+        border-color: #ddd;
+        color: #1a1a1a;
+    }
+}
